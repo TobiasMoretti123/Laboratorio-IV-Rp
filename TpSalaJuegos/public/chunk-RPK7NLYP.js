@@ -1,0 +1,1 @@
+import{Z as i,ua as o,va as t,xa as a,ya as c}from"./chunk-6Z5DH5BW.js";var r=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=i({type:n,selectors:[["app-login-verificacion"]],standalone:!0,features:[c],decls:2,vars:0,template:function(e,s){e&1&&(o(0,"p"),a(1,"login works!"),t())}})};export{r as LoginVerificacionComponent};
