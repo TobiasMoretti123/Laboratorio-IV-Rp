@@ -1,0 +1,1 @@
+import{Ba as o,Ca as i,Ea as s,Ha as a,Z as t}from"./chunk-2HBY5GK2.js";var p=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-quien-soy"]],standalone:!0,features:[a],decls:2,vars:0,template:function(e,r){e&1&&(o(0,"p"),s(1,"quien-soy works!"),i())}})};export{p as QuienSoyComponent};
