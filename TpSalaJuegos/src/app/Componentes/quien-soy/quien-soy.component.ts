@@ -1,26 +1,66 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { FireAuthService } from '../../Servicios/fire-auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { FireStorageService } from '../../Servicios/fire-storage.service';
 
 @Component({
   selector: 'app-quien-soy',
-  standalone: true,
-  imports: [CommonModule,FormsModule],
   templateUrl: './quien-soy.component.html',
   styleUrl: './quien-soy.component.css'
 })
-export class QuienSoyComponent implements OnInit{
-  urlImagen: Observable<string | null> | undefined;
+export class QuienSoyComponent implements OnInit {
+  mostrarSpinner:boolean = false;
+  mostrarUsuario:boolean = false;
+  imagenAlumno: string = "";
 
-  constructor(private storage: AngularFireStorage) {}
+  constructor(public router: Router, public authService: FireAuthService,public storageService:FireStorageService, public snackBar: MatSnackBar){}
 
-  ngOnInit() {
-    
-    const rutaImagen = 'gs://tpsalajuegos-5930a.appspot.com/Untitled.png';
-    const refImagen = this.storage.ref(rutaImagen);
-
-    this.urlImagen = refImagen.getDownloadURL();
+  Volver(){
+    this.RuteoHome();
   }
+
+  async ngOnInit(): Promise<void> {
+    this.imagenAlumno = await this.obtenerImagen('Untitled.png');
+  }
+
+  CerrarSession(){
+    this.authService.logout();
+    this.AbrirSnackBar('Se a cerrado la sesion');
+    this.RuteoHome();
+  }
+
+  AbrirSnackBar(mensaje:any){
+    this.snackBar.open(mensaje, 'Cerrar',{
+      duration: 2000,
+    });
+  }
+
+  obtenerImagen(path: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.storageService.getImageUrl(path).subscribe({
+        next: (url: string) => resolve(url),
+        error: (err) => {
+          console.error('Error al obtener la URL de la imagen:', err);
+          resolve(''); 
+        }
+      });
+    });
+  }
+  
+  RuteoHome(){
+    this.router.navigate(['/Home']);
+  }
+
+  MostrarUsuario() {
+    this.mostrarUsuario = true;
+  }
+
+  OcultarUsuario() {
+    this.mostrarUsuario = false;
+  }
+
+  /*Chat(){
+    this.router.navigate(['/chat']);
+  }*/
 }

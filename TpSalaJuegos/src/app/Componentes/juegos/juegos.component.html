@@ -1,0 +1,27 @@
+<div *ngIf="spinner">
+    <div class="spinner">
+        <mat-progress-spinner class="spinner" *ngIf="spinner" diameter="100" color="accent" mode="indeterminate"></mat-progress-spinner>
+    </div>
+</div>
+<div *ngIf="!spinner">
+    <div class="image-container">
+        <p class="Mayor">Mayor Menor</p>
+        <div *ngIf="imagenMayorMenor">
+            <img [src]="imagenMayorMenor" alt="Mayor Menor">
+        </div>
+        <p class="Adivina">Adivina el Dado</p>
+        <div *ngIf="imagenDados">
+            <img [src]="imagenDados" alt="Adivina el Dado">
+        </div>
+    </div>
+    <div class="image-container">
+        <p class="Preguntados">Preguntados</p>
+        <div *ngIf="imagenPreguntados">
+            <img [src]="imagenPreguntados" alt="Preguntados">
+        </div>
+        <p class="Ahorcado">Ahorcado</p>
+        <div *ngIf="imagenAhorcado">
+            <img [src]="imagenAhorcado" alt="Ahorcado">
+        </div>
+    </div>
+</div>

@@ -1,7 +1,36 @@
-<p>Tobias Moretti</p>
-<p>Legajo: 111024</p>
-<p>DNI: 41668744</p>
-<div *ngIf="urlImagen | async as fileURL; ">
-    <img src="urlImagen" alt="fotoAlumno">
-</div>
-<p>Juego Propio:</p>
+<div class="button-grid">
+    <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
+    <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
+    <div *ngIf="mostrarUsuario" class="tooltip">{{authService.getUserEmail()}}</div>
+  </div>
+  <div class="container">
+    <h1>Información del Alumno</h1>
+      <div class="info">
+        <ol class="data-list">
+          <li class="data-item">
+            <mat-label>Nombre Alumno: Tobias Nahuel Moretti</mat-label>
+              </li>
+                <li class="data-item">
+                  <mat-label>Legajo: 111024</mat-label>
+                </li>
+              <li class="data-item">
+            <mat-label>DNI: 41668744</mat-label>
+          </li>
+        </ol>
+        <div class="contenedor-imagen">
+            <div *ngIf="imagenAlumno">
+                <img [src]="imagenAlumno" alt="Foto Alumno">
+            </div>
+        </div>
+          <div class="juego-propio">
+            <mat-label>Juego Propio:</mat-label>
+            <p>Adivina el dado: Es un juego sencillo donde se selecciona un numero del 1 al 6.
+              Luego se tira un dado para averiguar si adivinaste el numero o no.
+              Si adivinaste ganas 1 punto.
+              Si no tienes 10 intentos para adivinar hasta que se termine el juego.
+              Al finalizar se contabilizan los puntos.
+            </p>
+          </div> 
+      </div>  
+  </div>              

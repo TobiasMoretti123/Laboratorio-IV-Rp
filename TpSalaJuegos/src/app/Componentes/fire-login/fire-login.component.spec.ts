@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ErrorComponent } from './error.component';
+import { FireLoginComponent } from './fire-login.component';
 
-describe('ErrorComponent', () => {
-  let component: ErrorComponent;
-  let fixture: ComponentFixture<ErrorComponent>;
+describe('FireLoginComponent', () => {
+  let component: FireLoginComponent;
+  let fixture: ComponentFixture<FireLoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ErrorComponent]
+      declarations: [FireLoginComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ErrorComponent);
+    fixture = TestBed.createComponent(FireLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

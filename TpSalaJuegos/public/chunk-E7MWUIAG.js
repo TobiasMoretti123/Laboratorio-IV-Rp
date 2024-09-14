@@ -1,1 +1,0 @@
-import{Fa as o,Ga as n,Ia as a,Ja as p,ba as r}from"./chunk-7RZXD6ZD.js";var s=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=r({type:t,selectors:[["app-error"]],standalone:!0,features:[p],decls:2,vars:0,template:function(e,m){e&1&&(o(0,"p"),a(1,"error works!"),n())}})};export{s as ErrorComponent};
