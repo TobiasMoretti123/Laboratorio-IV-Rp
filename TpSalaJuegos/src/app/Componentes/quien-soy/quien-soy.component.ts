@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FireStorageService } from '../../Servicios/fire-storage.service';
+import { Usuario } from '../../Clases/usuario';
 
 @Component({
   selector: 'app-quien-soy',
@@ -13,6 +14,7 @@ export class QuienSoyComponent implements OnInit {
   mostrarSpinner:boolean = false;
   mostrarUsuario:boolean = false;
   imagenAlumno: string = "";
+  usuario:Usuario = new Usuario("","")
 
   constructor(public router: Router, public authService: FireAuthService,public storageService:FireStorageService, public snackBar: MatSnackBar){}
 
@@ -21,6 +23,9 @@ export class QuienSoyComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    this.authService.getUserEmail().subscribe(email => {
+      this.usuario.mail = email;
+    });
     this.imagenAlumno = await this.obtenerImagen('Untitled.png');
   }
 

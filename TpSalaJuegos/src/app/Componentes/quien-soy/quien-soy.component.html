@@ -2,20 +2,20 @@
     <button mat-raised-button (click)="Volver()">Volver</button>
     <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
     <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
-    <div *ngIf="mostrarUsuario" class="tooltip">{{authService.getUserEmail()}}</div>
+    <div *ngIf="mostrarUsuario" class="tooltip">{{usuario.mail}}</div>
   </div>
   <div class="container">
     <h1>Información del Alumno</h1>
       <div class="info">
         <ol class="data-list">
           <li class="data-item">
-            <mat-label>Nombre Alumno: Tobias Nahuel Moretti</mat-label>
+            <mat-label>Nombre Alumno: Tobias Nahuel Moretti</mat-label><br><br>
               </li>
                 <li class="data-item">
-                  <mat-label>Legajo: 111024</mat-label>
+                  <mat-label>Legajo: 111024</mat-label><br><br>
                 </li>
               <li class="data-item">
-            <mat-label>DNI: 41668744</mat-label>
+            <mat-label>DNI: 41668744</mat-label><br>
           </li>
         </ol>
         <div class="contenedor-imagen">
