@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FireStorageService } from '../../Servicios/fire-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-juegos',
@@ -14,7 +15,7 @@ export class JuegosComponent {
   imagenMayorMenor: string | null = null;
   spinner:boolean = false;
 
-  constructor(private storageService: FireStorageService) { }
+  constructor(private storageService: FireStorageService, public router:Router) { }
 
   async ngOnInit(): Promise<void> {
     this.spinner = true
@@ -37,5 +38,9 @@ export class JuegosComponent {
         }
       });
     });
+  }
+
+  AbrirRuta(ruta:string){
+    this.router.navigateByUrl(ruta);
   }
 }

@@ -1,0 +1,122 @@
+.button-grid {
+    position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.5);;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+  }
+  
+  .button-grid button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 20px 30px;
+  font-size: 20px;
+  }
+  
+  .content {
+  padding-top: 50px; 
+  }
+  
+  .material-icons{
+  margin-left: 10px;
+  margin-top: 2px;
+  font-size: 40px; 
+  }
+  
+  .contenedor {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.5); 
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 30px;
+  }
+  
+  .chat-box {
+    width: 450px;
+    height: 650px;
+    border: 4px solid #000000;
+    border-radius: 20px;
+    overflow-y: auto;
+    margin-left: 20px;
+  }
+  
+  .metadata {
+    font-size: 12px;
+    color: #000000;
+    margin-top: 4px;
+    font-size: 18px;
+  }
+    
+  .sent-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+    
+  .received-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+    
+  .message-sent {
+    background-color: #DCF8C6; 
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+    
+  .message-received {
+    background-color: #EAEAEA; 
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+    
+  .input-area {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+  }
+    
+  .input-area input {
+    flex: 1;
+    padding: 20px 30px;
+    font-size: 20px;
+  }
+    
+    .input-area button {
+      padding: 30px 30px;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  
+    .volver{
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 20px 30px;
+      font-size: 20px;
+    }
+  
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      z-index: 9999; 
+    }

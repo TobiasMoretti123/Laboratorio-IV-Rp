@@ -19,7 +19,7 @@ export class RegistrarseComponent {
     this.authService.register(this.email, this.password).subscribe(result => {
       if (result.success) {
         this.AbrirSnackBar('Usuario registrado: ' + this.email)
-        this.router.navigate(['/login']);
+        this.router.navigate(['/Login']);
       } else {
         this.AbrirSnackBar(result.message || 'Error desconocido');
       }
@@ -27,7 +27,7 @@ export class RegistrarseComponent {
   }
 
   goToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/Login']);
   }
 
   AbrirSnackBar(mensaje:any){

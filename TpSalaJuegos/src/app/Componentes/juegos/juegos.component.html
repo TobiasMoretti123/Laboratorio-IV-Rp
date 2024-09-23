@@ -7,7 +7,7 @@
     <div class="image-container">
         <p class="Mayor">Mayor Menor</p>
         <div *ngIf="imagenMayorMenor">
-            <img [src]="imagenMayorMenor" alt="Mayor Menor">
+            <img [src]="imagenMayorMenor" alt="Mayor Menor" (click)="AbrirRuta('Juegos/mayor-menor')">
         </div>
         <p class="Adivina">Adivina el Dado</p>
         <div *ngIf="imagenDados">
@@ -21,7 +21,7 @@
         </div>
         <p class="Ahorcado">Ahorcado</p>
         <div *ngIf="imagenAhorcado">
-            <img [src]="imagenAhorcado" alt="Ahorcado">
+            <img [src]="imagenAhorcado" alt="Ahorcado" (click)="AbrirRuta('Juegos/ahorcado')">
         </div>
     </div>
 </div>

@@ -1,0 +1,144 @@
+.button-grid {
+    position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.5);;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+}
+
+.button-grid button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 20px 30px;
+  font-size: 20px;
+}
+
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.content {
+  padding-top: 50px; 
+}
+
+.material-icons{
+  margin-left: 10px;
+  margin-top: 2px;
+  font-size: 40px; 
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.imagenCarta{
+    width: 250px; 
+    height: auto;
+    -webkit-animation: flip-vertical-right 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+	        animation: flip-vertical-right 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+}
+
+
+.cards div {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px; 
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.botones button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 70px;
+    margin-left: 70px;
+    padding: 20px 30px;
+    font-size: 20px;
+}
+
+.texto {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.puntos {
+    color: #ffffff;
+    background-color: rgba(0, 0, 255, 0.5);
+    border-radius: 20px; 
+    padding: 10px 20px;
+    font-size: 18px; 
+    text-align: left;
+}
+
+.estadoDelJuego {
+    width: 100%; 
+  }
+
+.vidas {
+    color: #ffffff;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 20px; 
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 9999; 
+  }
+
+.rejugar{
+    display: block;
+    padding: 20px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 0;
+}
+
+ @-webkit-keyframes flip-vertical-right {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+  @keyframes flip-vertical-right {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+  

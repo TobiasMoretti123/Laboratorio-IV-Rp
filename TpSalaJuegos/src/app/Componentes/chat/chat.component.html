@@ -1,0 +1,31 @@
+<div class="button-grid">
+    <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button (click)="SobreMi()">Sobre Mí</button>
+    <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
+    <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
+    <div *ngIf="mostrarUsuario" class="tooltip">{{usuarioLogeado}}</div>
+  </div>
+  <div class="contenedor">
+        <div class="chat-box">
+          <div class="messages">
+            <div *ngFor="let mensaje of (fireDataBaseService.mensajes | async)">
+              <ng-container *ngIf="mensaje.usuario === usuarioLogeado; else otherUser">
+                <div class="sent-message">
+                  <div class="metadata">{{ mensaje.usuario }} {{ ConvertirFecha(mensaje.fecha) | date: 'short' }}</div>
+                  <div class="message-sent">{{ mensaje.mensaje }}</div>
+                </div>
+              </ng-container>
+              <ng-template #otherUser>
+                <div class="received-message">
+                  <div class="metadata">{{ mensaje.usuario }} {{ ConvertirFecha(mensaje.fecha) | date: 'short' }}</div>
+                  <div class="message-received">{{ mensaje.mensaje }}</div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div class="input-area">
+          <input matInput type="text" [(ngModel)]="nuevoMensaje" placeholder="Escribe un mensaje...">
+          <button mat-raised-button color="warn" (click)="EnviarMensaje()">Enviar</button>
+        </div>
+  </div>
