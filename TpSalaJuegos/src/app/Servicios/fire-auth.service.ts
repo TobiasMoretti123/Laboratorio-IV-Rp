@@ -74,6 +74,7 @@ export class FireAuthService {
   }
 
   private getErrorMessage(errorCode: string): string {
+    console.log(errorCode);
     switch (errorCode) {
       case 'auth/invalid-email':
         return 'El formato del email es inválido.';
@@ -81,12 +82,14 @@ export class FireAuthService {
         return 'El usuario ha sido deshabilitado.';
       case 'auth/user-not-found':
         return 'No se encontró un usuario con ese email.';
-      case 'auth/wrong-password':
-        return 'La contraseña es incorrecta.';
+      case 'auth/invalid-credential':
+        return 'La contraseña o el mail es incorrecto.';
       case 'auth/email-already-in-use':
         return 'El email ya está en uso.';
       case 'auth/weak-password':
         return 'La contraseña debe tener al menos 6 caracteres.';
+      case 'auth/missing-password':
+        return 'La contraseña no puede estar vacia.';
       default:
         return 'Ocurrió un error. Intenta de nuevo.';
     }
