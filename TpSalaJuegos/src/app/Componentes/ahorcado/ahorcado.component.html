@@ -9,6 +9,7 @@
 <div class="ahorcado-container">
     <i class="material-icons" (click)="Pista()" (mouseover)="MostrarHelp()" (mouseleave)="OcultarHelp()">help</i>
     <div *ngIf="mostrarHelp" class="tooltip">Necesitas una pista?</div>
+    <p class="texto puntos">Puntos: {{ puntos }}</p>
     <div class="munieco">
         <span class="horca">
             <img [src]="imagenHorca">

@@ -40,6 +40,7 @@ export class AhorcadoComponent  implements OnInit{
   imagenCabeza:string ="";
   imagenHorca:string ="";
   imagenTorzo:string ="";
+  puntos:number = 0;
 
   constructor(public snackBar:MatSnackBar,public router:Router,public auth:FireAuthService,public storageService:FireStorageService){}
 
@@ -78,6 +79,7 @@ export class AhorcadoComponent  implements OnInit{
     this.letraIngresada = letra.toUpperCase();
     if(this.palabraSeleccionada.includes(letra)){
       this.letrasCorrectas.push(letra);
+      this.puntos++;
     }else{
       this.letrasIncorrectas.push(letra);
       this.errores++;
@@ -92,7 +94,7 @@ export class AhorcadoComponent  implements OnInit{
     if(letrasPorDefecto === this.palabraSeleccionada.length){
       this.esVictoria = true;
       this.blockearJugarDeNuevo = false;
-      this.AbrirSnackBar('Felicitaciones Ganaste '+ this.letrasCorrectas.length+" Puntos");
+      this.AbrirSnackBar('Felicitaciones Ganaste '+ this.puntos +" Puntos");
     }
     else if (this.errores >= this.limiteDeErrores){
       this.esVictoria = false;
@@ -148,6 +150,7 @@ export class AhorcadoComponent  implements OnInit{
     this.cabeza = false;
     this.brazos= false;
     this.piernas= false; 
+    this.puntos = 0;
   }
 
   MostrarHelp() {
