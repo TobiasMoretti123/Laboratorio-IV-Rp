@@ -1,0 +1,25 @@
+<div class="button-grid">
+    <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button routerLink="/Chat">Chat</button>
+    <button mat-raised-button routerLink="/QuienSoy">Sobre Mí</button>
+    <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
+    <i class="material-icons" (mouseover)="mostrarTexto()" (mouseleave)="ocultarTexto()">account_circle</i>
+    <div *ngIf="mostrarTooltip" class="tooltip">{{usuarioLogeado}}</div>
+</div>
+<div class="container">
+    <div class="pregunta"*ngIf="paisCorrecto">
+        <h2>¿De que pais es esta bandera?</h2>
+        <img [src]="paisCorrecto.flags.png" alt="Bandera correcta" class="bandera">
+    </div>
+    <div class="opciones">
+        <button mat-raised-button *ngFor="let opcion of opciones" (click)="verificarRespuesta(opcion)" [disabled]="desabilitarBotones">
+          <p>{{opcion.name.common}}</p>
+        </button>
+    </div>
+    <div class="estadoDeJuego">
+        <p class="texto puntos">Puntos: {{ puntos }}</p>
+        <p class="texto vidas">Intentos: {{ intentos }}</p>
+    </div>
+    <button class="rejugar" mat-raised-button color="primary" (click)="JugarDeNuevo()" [disabled]="blockearRejugar">Volver a Jugar</button>
+</div>
+

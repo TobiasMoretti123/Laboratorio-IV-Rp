@@ -151,6 +151,7 @@ export class AhorcadoComponent  implements OnInit{
     this.brazos= false;
     this.piernas= false; 
     this.puntos = 0;
+    this.blockearJugarDeNuevo = true;
   }
 
   MostrarHelp() {

@@ -11,21 +11,21 @@ const routes: Routes = [
         loadChildren: () => import('./../ahorcado/ahorcado.module')
           .then(m => m.AhorcadoModule)
       },
-      /*{
+      {
         path: 'preguntados',
         loadChildren: () => import('./../preguntados/preguntados.module')
           .then(m => m.PreguntadosModule)
-      },*/
+      },
       {
         path: 'mayor-menor',
         loadChildren: () => import('./../mayor-menor/mayor-menor.module')
           .then(m => m.MayorMenorModule)
       },
-      /*{
+      {
         path: 'dado',
         loadChildren: () => import('./../dado/dado.module')
           .then(m => m.DadoModule)
-      },*/
+      },
       { path: '', redirectTo: 'juegos', pathMatch: 'full' } 
     ]
   }

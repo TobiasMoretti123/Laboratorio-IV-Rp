@@ -11,13 +11,13 @@
         </div>
         <p class="Adivina">Adivina el Dado</p>
         <div *ngIf="imagenDados">
-            <img [src]="imagenDados" alt="Adivina el Dado">
+            <img [src]="imagenDados" alt="Adivina el Dado" (click)="AbrirRuta('Juegos/dado')">
         </div>
     </div>
     <div class="image-container">
         <p class="Preguntados">Preguntados</p>
         <div *ngIf="imagenPreguntados">
-            <img [src]="imagenPreguntados" alt="Preguntados">
+            <img [src]="imagenPreguntados" alt="Preguntados" (click)="AbrirRuta('Juegos/preguntados')">
         </div>
         <p class="Ahorcado">Ahorcado</p>
         <div *ngIf="imagenAhorcado">

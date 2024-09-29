@@ -39,7 +39,7 @@
   
   .container {
     position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.5); 
@@ -56,12 +56,12 @@
     }
     
     .contenedor-imagen {
-      margin-top: 16px;
-      margin-bottom: 16px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     
     img {
-      width: 400px;
+      width: 300px;
       height: auto;
       margin-bottom: 8px;
       -webkit-animation: flip-scale-2-ver-left 1s linear reverse both;

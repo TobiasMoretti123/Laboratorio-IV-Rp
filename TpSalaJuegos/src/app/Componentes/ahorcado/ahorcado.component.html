@@ -8,8 +8,7 @@
 </div>
 <div class="ahorcado-container">
     <i class="material-icons" (click)="Pista()" (mouseover)="MostrarHelp()" (mouseleave)="OcultarHelp()">help</i>
-    <div *ngIf="mostrarHelp" class="tooltip">Necesitas una pista?</div>
-    <p class="texto puntos">Puntos: {{ puntos }}</p>
+    <div *ngIf="mostrarHelp" class="pista">Necesitas una pista?</div>
     <div class="munieco">
         <span class="horca">
             <img [src]="imagenHorca">
@@ -48,7 +47,10 @@
         {{ letra }}
       </button>
     </div>
-      <button class="reintentar" mat-raised-button color="primary" (click)="ReiniciarJuego()" [disabled]="blockearJugarDeNuevo">Volver a Jugar</button>
+    <div class="sidebar" >
+        <p class="puntos">Puntos: {{puntos}}</p>
+    </div>
+    <button class="reintentar" mat-raised-button color="primary" (click)="ReiniciarJuego()" [disabled]="blockearJugarDeNuevo">Volver a Jugar</button>
 </div>
 
     

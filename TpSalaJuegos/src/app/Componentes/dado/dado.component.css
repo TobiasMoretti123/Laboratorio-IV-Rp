@@ -1,0 +1,117 @@
+.button-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-grid button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 20px 30px;
+  font-size: 20px;
+}
+
+.content {
+  padding-top: 50px; 
+}
+
+.material-icons{
+  margin-left: 10px;
+  margin-top: 2px;
+  font-size: 40px; 
+}
+
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+  .botones {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  }
+
+  .botones button {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 30px 40px;
+    font-size: 30px;
+  }
+
+  .dado{
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dado img{
+  width: 300px; 
+}
+
+.dadoMuestra{
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dadoMuestra img{
+  width: 300px;
+}
+
+  .reintentar{
+    margin-top: 10px;
+    display: block;
+    padding: 20px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 0;
+  }
+
+  .sidebar {
+    width: 100%; 
+  }
+
+  .intentos {
+    color: #ffffff;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 20px; 
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .puntos {
+    color: #ffffff;
+    background-color: rgba(0, 0, 255, 0.5);
+    border-radius: 20px; 
+    padding: 10px 20px;
+    font-size: 18px; 
+    text-align: left;
+  }
+
+  .tooltip {
+    position: absolute;
+    background-color: rgb(255, 255, 255);;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 9999; 
+    margin-top: 60px;
+    font-size: 20px;
+  }
+
