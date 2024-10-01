@@ -49,6 +49,7 @@ export class DadoComponent {
   CerrarSession(){
     this.auth.logout();
     this.AbrirSnackBar('Se a cerrado la sesion');
+    this.RuteoHome();
   }
 
   mostrarTexto() {
