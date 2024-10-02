@@ -1,19 +1,41 @@
 .button-grid {
-    position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(255, 255, 255, 0.5);;
-      padding: 10px;
-      display: flex;
-      justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.1vw;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .button-grid button {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 20px 30px;
-  font-size: 20px;
+margin-left: 0.5vw;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+
+.content {
+padding-top: 50px; 
+}
+
+.material-icons{
+margin-left: 1vw;
+margin-top: 0.4vw;
+font-size: 2.5vw; 
+}
+
+.tooltip {
+position: absolute;
+background-color: rgb(255, 255, 255);;
+color: rgb(0, 0, 0);
+padding: 5px;
+border-radius: 3px;
+z-index: 9999; 
+margin-top: 3vw;
+font-size: 1vw;
 }
 
 .container{
@@ -22,19 +44,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.5); 
-    padding: 10px;
-    border-radius: 10px;
+    padding: 1vw;
+    border-radius: 1vw;
     text-align: center;
-}
-
-.content {
-  padding-top: 50px; 
-}
-
-.material-icons{
-  margin-left: 10px;
-  margin-top: 2px;
-  font-size: 40px; 
 }
 
 .cards {
@@ -44,7 +56,7 @@
 }
 
 .imagenCarta{
-    width: 250px; 
+    width: 13vw; 
     height: auto;
     -webkit-animation: flip-vertical-right 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
 	        animation: flip-vertical-right 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
@@ -52,9 +64,9 @@
 
 
 .cards div {
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px; 
+    margin-right: 1vw;
+    margin-left: 1vw;
+    margin-top: 1vw; 
 }
 
 .botones {
@@ -64,63 +76,51 @@
 }
 
 .botones button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 70px;
-    margin-left: 70px;
-    padding: 20px 30px;
-    font-size: 20px;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    padding: 1vw 2vw;
+    font-size: 2vw;
 }
 
-.texto {
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: white; 
-    padding: 10px; 
-    border-radius: 5px; 
+.titulo{
+  font-size: 2.5vw;
 }
 
 .puntos {
-    color: #ffffff;
-    background-color: rgba(0, 0, 255, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px; 
-    text-align: left;
+  color: #ffffff;
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 2vw; 
+  padding: 0.5vw 1vw;
+  font-size: 1vw; 
+  text-align: left;
 }
 
 .estadoDelJuego {
-    width: 100%; 
+    width: 100vw; 
   }
 
 .vidas {
-    color: #ffffff;
-    background-color: rgba(255, 0, 0, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px;
-    text-align: left;
+  color: #ffffff;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 2vw; 
+  padding: 0.5vw 1vw;
+  font-size: 1vw; 
+  text-align: left;
 }
 
-.tooltip {
-  position: absolute;
-  background-color: rgb(255, 255, 255);;
-  color: rgb(0, 0, 0);
-  padding: 5px;
-  border-radius: 3px;
-  z-index: 9999; 
-  margin-top: 60px;
-  font-size: 20px;
-  }
 
 .rejugar{
-    display: block;
-    padding: 20px 30px;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 0;
+  display: block;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  border: none;
+  border-radius: 5vw;
+  cursor: pointer;
+  text-align: center;
+  line-height: 0;
+  margin-top: 1vw;
 }
 
  @-webkit-keyframes flip-vertical-right {
@@ -144,93 +144,4 @@
     }
   }
 
-  @media (max-width: 1366px) {
-    .button-grid button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
-    .material-icons {
-        font-size: 40px;
-    }
-
-    .titulo{
-      font-size: 40px;
-    }
-
-  .material-icons {
-      font-size: 35px;
-  }
-
-  .imagenCarta {
-      width: 220px;
-  }
-
-  .botones button {
-      margin-right: 50px;
-      margin-left: 50px;
-      padding: 15px 25px;
-      font-size: 18px;
-  }
-
-  .container{
-    width: 1200px;
-    margin-top: 20px;
-  }
-
-  .puntos, .vidas {
-      padding: 8px 15px;
-      font-size: 16px;
-  }
-
-    .rejugar {
-      padding: 15px 25px;
-      font-size: 18px;
-  }
-}
-
-@media (max-width: 1024px) {
-    .button-grid button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-
-    .container{
-      width: 900px;
-    }
-
-    .titulo{
-      font-size: 40px;
-    }
-
-    .material-icons {
-        font-size: 35px;
-    }
-
-    .tooltip {
-        font-size: 14px;
-    }
-
-    .imagenCarta {
-      width: 180px;
-  }
-
-  .botones button {
-      margin-right: 30px;
-      margin-left: 30px;
-      padding: 10px 15px;
-      font-size: 16px;
-  }
-
-  .puntos, .vidas {
-      padding: 6px 10px;
-      font-size: 14px;
-  }
-
-
-  .rejugar {
-      padding: 10px 15px;
-      font-size: 16px;
-  }
-}
   

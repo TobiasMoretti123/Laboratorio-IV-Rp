@@ -44,7 +44,6 @@ export class PreguntadosComponent {
     const paisesFalsos = this.obtenerPaisesFalsos(paises, indiceCorrecto);
   
     this.opciones = this.mezclarOpciones([this.paisCorrecto, ...paisesFalsos]);
-    console.log(this.paisCorrecto);
   }
   
   obtenerPaisesFalsos(paises: any[], indiceCorrecto: number): any[] {
@@ -63,14 +62,14 @@ export class PreguntadosComponent {
   }
   
   verificarRespuesta(paisSeleccionado: any): void {
-    if (paisSeleccionado.nombre === this.paisCorrecto.nombre) { // Compara el nombre en español
+    if (paisSeleccionado.translations.spa.common === this.paisCorrecto.translations.spa.common) { 
       this.puntos++;
       this.intentos--;
       this.AbrirSnackBar('¡Correcto!');
       this.obtenerPaises();
     } else {
       this.intentos--;
-      this.AbrirSnackBar('Incorrecto, la Bandera Seleccionada era de: ' + this.paisCorrecto.nombre); // Mostrar el nombre en español
+      this.AbrirSnackBar('Incorrecto, la Bandera Seleccionada era de: ' + this.paisCorrecto.translations.spa.common); 
       this.obtenerPaises();
     }
   }

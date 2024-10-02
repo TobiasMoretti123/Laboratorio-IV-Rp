@@ -3,27 +3,39 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.5);;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.1vw;
   display: flex;
   justify-content: flex-end;
 }
 
 .button-grid button {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 20px 30px;
-  font-size: 20px;
+margin-left: 0.5vw;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
 }
 
 .content {
-  padding-top: 50px; 
+padding-top: 50px; 
 }
 
 .material-icons{
-  margin-left: 10px;
-  margin-top: 2px;
-  font-size: 40px; 
+margin-left: 1vw;
+margin-top: 0.4vw;
+font-size: 2.5vw; 
+}
+
+.tooltip {
+position: absolute;
+background-color: rgb(255, 255, 255);;
+color: rgb(0, 0, 0);
+padding: 5px;
+border-radius: 3px;
+z-index: 9999; 
+margin-top: 3vw;
+font-size: 1vw;
 }
 
 .container{
@@ -32,8 +44,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.5); 
-    padding: 20px;
-    border-radius: 10px;
+    padding: 2vw;
+    border-radius: 1vw;
     text-align: center;
 }
 
@@ -44,42 +56,46 @@
   }
 
   .botones button {
-    margin-left: 20px;
-    margin-bottom: 10px;
-    padding: 30px 40px;
-    font-size: 30px;
+    margin-left: 2vw;
+    margin-bottom: 1vw;
+    padding: 1vw 2vw;
+    font-size: 2vw;
   }
 
   .dado{
-    padding: 20px;
-    border-radius: 10px;
+    padding: 2vw;
+    border-radius: 1vw;
     text-align: center;
 }
 
 .dado img{
-  width: 300px; 
+  width: 15vw; 
 }
 
 .dadoMuestra{
-    padding: 20px;
-    border-radius: 10px;
+    padding: 2vw;
+    border-radius: 1vw;
     text-align: center;
 }
 
 .dadoMuestra img{
-  width: 300px;
+  width: 15vw;
+}
+
+.oculto{
+  display: none;
 }
 
   .reintentar{
-    margin-top: 10px;
     display: block;
-    padding: 20px 30px;
-    font-size: 20px;
+    padding: 1vw 2vw;
+    font-size: 2vw;
     border: none;
-    border-radius: 5px;
+    border-radius: 5vw;
     cursor: pointer;
     text-align: center;
     line-height: 0;
+    margin-top: 1vw;
   }
 
   .sidebar {
@@ -89,136 +105,22 @@
   .intentos {
     color: #ffffff;
     background-color: rgba(255, 0, 0, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px;
+    border-radius: 2vw; 
+    padding: 0.5vw 1vw;
+    font-size: 1vw; 
     text-align: left;
+  }
+
+  .titulo{
+    font-size: 3vw;
   }
 
   .puntos {
     color: #ffffff;
-    background-color: rgba(0, 0, 255, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px; 
-    text-align: left;
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 2vw; 
+  padding: 0.5vw 1vw;
+  font-size: 1vw; 
+  text-align: left;
   }
 
-  .tooltip {
-    position: absolute;
-    background-color: rgb(255, 255, 255);;
-    color: rgb(0, 0, 0);
-    padding: 5px;
-    border-radius: 3px;
-    z-index: 9999; 
-    margin-top: 60px;
-    font-size: 20px;
-  }
-
-  @media (max-width: 1366px) {
-    .button-grid button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
-    .material-icons {
-        font-size: 40px;
-    }
-
-    .titulo{
-      font-size: 40px;
-    }
-
-  .material-icons {
-      font-size: 35px;
-  }
-
-  .container{
-    width: 1200px;
-    margin-top: 20px;
-  }
-
-  .dado{
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.dado img{
-  width: 200px; 
-}
-
-.dadoMuestra{
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.dadoMuestra img{
-  width: 200px;
-}
-
-  .puntos, .intentos {
-      padding: 8px 15px;
-      font-size: 16px;
-  }
-
-    .rejugar {
-      padding: 15px 25px;
-      font-size: 18px;
-  }
-}
-
-@media (max-width: 1024px) {
-    .button-grid button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-
-    .container{
-      width: 900px;
-    }
-
-    .titulo{
-      font-size: 40px;
-    }
-
-    .material-icons {
-        font-size: 35px;
-    }
-
-    .tooltip {
-        font-size: 14px;
-    }
-
-    .dado{
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-  }
-  
-  .dado img{
-    width: 200px; 
-  }
-  
-  .dadoMuestra{
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-  }
-  
-  .dadoMuestra img{
-    width: 200px;
-  }
-
-  .puntos, .intentos {
-      padding: 6px 10px;
-      font-size: 14px;
-  }
-
-
-  .rejugar {
-      padding: 10px 15px;
-      font-size: 16px;
-  }
-}

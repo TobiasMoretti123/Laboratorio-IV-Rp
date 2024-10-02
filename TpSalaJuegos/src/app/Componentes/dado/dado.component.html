@@ -7,9 +7,9 @@
     <div *ngIf="mostrarTooltip" class="tooltip">{{usuario}}</div>
   </div>
 <div class="container">
-    <h1 class="titulo">Que Valor de Dado Va a Salir</h1>
-    <div class="dadoMuestra">
-        <img [src]="imagen0" *ngIf="!mostrarDado">
+    <h1 class="titulo">Que Valor de Dado Va a Salir?</h1>
+    <div [ngClass]="{'oculto': mostrarDado}" class="dadoMuestra">
+        <img [src]="imagen0">
     </div>
     <div class="dado" [ngSwitch]="valorDelDado" *ngIf="mostrarDado">
         <div *ngSwitchCase="1">

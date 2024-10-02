@@ -1,19 +1,18 @@
 .contenedor {
     position: fixed;
     top: 55%;
-    left: 49%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.5); 
-    padding: 100px;
+    padding: 5vw; 
     border-radius: 10px;
     text-align: center;
-  }
-  
-  
+}
+
 .boton {
     display: block;
-    padding: 40px 50px;
-    font-size: 20px;
+    padding: 2vw 3vw;
+    font-size: 2vw;
     border: none;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -23,60 +22,19 @@
     width: 100%;
 }
 
-.texto{
+.texto {
     text-align: center;
 }
 
-.inputs{
+.inputs {
     display: flex;
     flex-direction: column;
-    margin-right: 400px;
+    margin-right: 3.5vw;
 }
 
-.input{
-    padding: 40px 50px;
-    font-size: 20px;
-    width: 200%;
-}
-
-@media (max-width: 1366px) {
-    .contenedor {
-        width: 80%; /* Ajuste de ancho en notebooks */
-        padding: 3vw; /* Reduce el padding en pantallas pequeñas */
-    }
-
-    h1 {
-        font-size: 1.8rem; /* Ajuste del tamaño del título */
-    }
-
-    .input{
-        margin-left: 160px;
-        width: 100%;
-    }
-
-    .boton{
-        width: 50%;
-        margin-left: 270px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .contenedor {
-        width: 80%; /* Aumenta el ancho del contenedor en pantallas más pequeñas */
-        padding: 2.5vw;
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    .input{
-        margin-left: 160px;
-        width: 100%;
-    }
-
-    .boton{
-        width: 40%;
-        margin-left: 260px;
-    }
+.input {
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    width: 100%;
+    margin-right: 20vw;
 }

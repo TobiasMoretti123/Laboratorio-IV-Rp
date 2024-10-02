@@ -11,7 +11,7 @@
             <div *ngFor="let mensaje of (fireDataBaseService.mensajes | async)">
               <ng-container *ngIf="mensaje.usuario === usuarioLogeado; else otherUser">
                 <div class="sent-message">
-                  <div class="metadata">{{ mensaje.usuario }} {{ ConvertirFecha(mensaje.fecha) | date: 'short' }}</div>
+                  <div class="metadata">Tu {{ ConvertirFecha(mensaje.fecha) | date: 'short' }}</div>
                   <div class="message-sent">{{ mensaje.mensaje }}</div>
                 </div>
               </ng-container>

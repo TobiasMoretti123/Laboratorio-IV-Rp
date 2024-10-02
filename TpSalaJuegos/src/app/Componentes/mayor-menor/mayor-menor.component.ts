@@ -71,7 +71,7 @@ export class MayorMenorComponent implements OnInit{
       } else {
         this.desabilitarBotones = true;
       }
-    }, 2000);
+    }, 3000);
   }
 
   EsMenor(){
@@ -103,7 +103,7 @@ export class MayorMenorComponent implements OnInit{
       } else {
         this.desabilitarBotones = true;
       }
-    }, 2000);
+    }, 3000);
   }
 
   convertirValorCarta(valor: string): number {

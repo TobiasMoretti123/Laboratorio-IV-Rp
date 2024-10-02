@@ -1,96 +1,37 @@
 .image-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    flex-wrap: wrap;
-    height: 40vh; 
-  }
-  
-  .spinner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
-
-  .image-container img {
-    width: 250px; 
-    height: 250px; 
-    border: 4px solid #000000;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px; 
-    cursor:pointer;
-  }
-
-  .Ahorcado{
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px; 
-    text-align: center;
-  }
-  
-  .Adivina{
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px; 
-    text-align: center;
-  }
-  
-  .Preguntados{
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px; 
-    text-align: center;
-  }
-  
-  .Mayor{
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px; 
-    padding: 10px 20px;
-    font-size: 18px; 
-    text-align: center;
-  }
-
-  @media (max-width: 1366px) and (max-height: 768px) {
-    .image-container img {
-        width: 190px; /* Tamaño más pequeño para imágenes */
-        height: 190px; /* Mantiene la proporción */
-    }
-
-    button {
-        font-size: 14px; /* Ajusta el tamaño de la fuente */
-    }
-
-    .spinner{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  flex-wrap: wrap;
+  height: 40vh; 
 }
 
-@media (max-width: 1024px) and (max-height: 768px) {
-    .image-container img {
-        width: 180px; /* Tamaño aún más pequeño */
-        height: 180px; 
-    }
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
 
-    button {
-        font-size: 12px; /* Ajusta el tamaño de la fuente */
-    }
+.image-container img {
+  width: 100%; 
+  max-width: 13vw; 
+  height: auto; 
+  border: 4px solid #000000;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px; 
+  cursor: pointer;
+}
 
-    .spinner{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-    }
+.Ahorcado, .Adivina, .Mayor, .Preguntados {
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2vw; 
+  padding: 1vw 2vw;
+  font-size: 1.3vw; 
+  text-align: center;
+  width: 80%; 
+  max-width: 200vw; 
+  margin: 10px 0;
 }

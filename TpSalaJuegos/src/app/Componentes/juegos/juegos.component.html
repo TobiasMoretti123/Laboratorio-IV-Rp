@@ -5,22 +5,22 @@
 </div>
 <div *ngIf="!spinner">
     <div class="image-container">
-        <p class="Mayor">Mayor Menor</p>
         <div *ngIf="imagenMayorMenor">
+            <p class="Mayor">Mayor Menor</p>
             <img [src]="imagenMayorMenor" alt="Mayor Menor" (click)="AbrirRuta('Juegos/mayor-menor')">
         </div>
-        <p class="Adivina">Adivina el Dado</p>
         <div *ngIf="imagenDados">
+            <p class="Adivina">Adivina el Dado</p>
             <img [src]="imagenDados" alt="Adivina el Dado" (click)="AbrirRuta('Juegos/dado')">
         </div>
     </div>
     <div class="image-container">
-        <p class="Preguntados">Preguntados</p>
         <div *ngIf="imagenPreguntados">
+            <p class="Preguntados">Preguntados</p>
             <img [src]="imagenPreguntados" alt="Preguntados" (click)="AbrirRuta('Juegos/preguntados')">
         </div>
-        <p class="Ahorcado">Ahorcado</p>
         <div *ngIf="imagenAhorcado">
+            <p class="Ahorcado">Ahorcado</p>
             <img [src]="imagenAhorcado" alt="Ahorcado" (click)="AbrirRuta('Juegos/ahorcado')">
         </div>
     </div>
