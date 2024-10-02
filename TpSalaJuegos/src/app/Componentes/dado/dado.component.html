@@ -1,15 +1,15 @@
 <div class="button-grid">
     <button mat-raised-button (click)="Volver()">Volver</button>
-    <button mat-raised-button routerLink="/chat">Chat</button>
-    <button mat-raised-button routerLink="/quien-soy">Sobre Mí</button>
+    <button mat-raised-button routerLink="/Chat">Chat</button>
+    <button mat-raised-button routerLink="/QuienSoy">Sobre Mí</button>
     <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
     <i class="material-icons" (mouseover)="mostrarTexto()" (mouseleave)="ocultarTexto()">account_circle</i>
     <div *ngIf="mostrarTooltip" class="tooltip">{{usuario}}</div>
   </div>
 <div class="container">
-    <h1>Adivina que Valor de Dado Va a salir</h1>
+    <h1 class="titulo">Que Valor de Dado Va a Salir</h1>
     <div class="dadoMuestra">
-        <img [src]="imagen1" *ngIf="!mostrarDado">
+        <img [src]="imagen0" *ngIf="!mostrarDado">
     </div>
     <div class="dado" [ngSwitch]="valorDelDado" *ngIf="mostrarDado">
         <div *ngSwitchCase="1">

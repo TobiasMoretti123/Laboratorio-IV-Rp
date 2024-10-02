@@ -143,4 +143,94 @@
               transform: rotateY(180deg);
     }
   }
+
+  @media (max-width: 1366px) {
+    .button-grid button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .material-icons {
+        font-size: 40px;
+    }
+
+    .titulo{
+      font-size: 40px;
+    }
+
+  .material-icons {
+      font-size: 35px;
+  }
+
+  .imagenCarta {
+      width: 220px;
+  }
+
+  .botones button {
+      margin-right: 50px;
+      margin-left: 50px;
+      padding: 15px 25px;
+      font-size: 18px;
+  }
+
+  .container{
+    width: 1200px;
+    margin-top: 20px;
+  }
+
+  .puntos, .vidas {
+      padding: 8px 15px;
+      font-size: 16px;
+  }
+
+    .rejugar {
+      padding: 15px 25px;
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .button-grid button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .container{
+      width: 900px;
+    }
+
+    .titulo{
+      font-size: 40px;
+    }
+
+    .material-icons {
+        font-size: 35px;
+    }
+
+    .tooltip {
+        font-size: 14px;
+    }
+
+    .imagenCarta {
+      width: 180px;
+  }
+
+  .botones button {
+      margin-right: 30px;
+      margin-left: 30px;
+      padding: 10px 15px;
+      font-size: 16px;
+  }
+
+  .puntos, .vidas {
+      padding: 6px 10px;
+      font-size: 14px;
+  }
+
+
+  .rejugar {
+      padding: 10px 15px;
+      font-size: 16px;
+  }
+}
   

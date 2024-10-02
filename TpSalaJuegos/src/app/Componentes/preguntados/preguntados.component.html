@@ -6,20 +6,33 @@
     <i class="material-icons" (mouseover)="mostrarTexto()" (mouseleave)="ocultarTexto()">account_circle</i>
     <div *ngIf="mostrarTooltip" class="tooltip">{{usuarioLogeado}}</div>
 </div>
+
 <div class="container">
-    <div class="pregunta"*ngIf="paisCorrecto">
-        <h2>¿De que pais es esta bandera?</h2>
-        <img [src]="paisCorrecto.flags.png" alt="Bandera correcta" class="bandera">
+    <!-- Pregunta: Mostrar si `paisCorrecto` existe -->
+    <div class="pregunta" *ngIf="paisCorrecto">
+        <h2 class="titulo">¿De qué país es esta bandera?</h2>
+        <!-- Mostrar la bandera solo si `mostrarBandera` es verdadero -->
+        <div *ngIf="mostrarBandera">
+            <img [src]="paisCorrecto.flags.png" alt="Bandera correcta" class="bandera">
+        </div>
     </div>
+
+    <!-- Opciones de respuesta -->
     <div class="opciones">
+        <!-- Botones con las opciones de países -->
         <button mat-raised-button *ngFor="let opcion of opciones" (click)="verificarRespuesta(opcion)" [disabled]="desabilitarBotones">
-          <p>{{opcion.name.common}}</p>
+            <p>{{ opcion.translations.spa.common }}</p> <!-- Mostrando el nombre del país en español -->
         </button>
     </div>
+
+    <!-- Estado del juego: Mostrar puntos e intentos -->
     <div class="estadoDeJuego">
         <p class="texto puntos">Puntos: {{ puntos }}</p>
         <p class="texto vidas">Intentos: {{ intentos }}</p>
     </div>
-    <button class="rejugar" mat-raised-button color="primary" (click)="JugarDeNuevo()" [disabled]="blockearRejugar">Volver a Jugar</button>
-</div>
 
+    <!-- Botón para volver a jugar -->
+    <button class="rejugar" mat-raised-button color="primary" (click)="JugarDeNuevo()" [disabled]="blockearRejugar">
+        Volver a Jugar
+    </button>
+</div>

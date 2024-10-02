@@ -23,6 +23,7 @@ export class DadoComponent {
   mostrarTooltip:boolean = false;
   blockearJugarDeNuevo:boolean = true;
   usuario:string | null= "";
+  imagen0: string | null = null;
   imagen1: string | null = null;
   imagen2: string | null = null;
   imagen3: string | null = null;
@@ -38,6 +39,7 @@ export class DadoComponent {
     this.auth.getUserEmail().subscribe(email => {
       this.usuario = email;
     });
+    this.imagen0 = await this.obtenerImagen('0.png');
     this.imagen1 = await this.obtenerImagen('1.png');
     this.imagen2 = await this.obtenerImagen('2.png');
     this.imagen3 = await this.obtenerImagen('3.png');

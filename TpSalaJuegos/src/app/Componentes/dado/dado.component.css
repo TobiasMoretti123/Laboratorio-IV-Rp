@@ -115,3 +115,110 @@
     font-size: 20px;
   }
 
+  @media (max-width: 1366px) {
+    .button-grid button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .material-icons {
+        font-size: 40px;
+    }
+
+    .titulo{
+      font-size: 40px;
+    }
+
+  .material-icons {
+      font-size: 35px;
+  }
+
+  .container{
+    width: 1200px;
+    margin-top: 20px;
+  }
+
+  .dado{
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dado img{
+  width: 200px; 
+}
+
+.dadoMuestra{
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dadoMuestra img{
+  width: 200px;
+}
+
+  .puntos, .intentos {
+      padding: 8px 15px;
+      font-size: 16px;
+  }
+
+    .rejugar {
+      padding: 15px 25px;
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .button-grid button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .container{
+      width: 900px;
+    }
+
+    .titulo{
+      font-size: 40px;
+    }
+
+    .material-icons {
+        font-size: 35px;
+    }
+
+    .tooltip {
+        font-size: 14px;
+    }
+
+    .dado{
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+  }
+  
+  .dado img{
+    width: 200px; 
+  }
+  
+  .dadoMuestra{
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+  }
+  
+  .dadoMuestra img{
+    width: 200px;
+  }
+
+  .puntos, .intentos {
+      padding: 6px 10px;
+      font-size: 14px;
+  }
+
+
+  .rejugar {
+      padding: 10px 15px;
+      font-size: 16px;
+  }
+}

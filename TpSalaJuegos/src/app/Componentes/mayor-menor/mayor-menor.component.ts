@@ -49,7 +49,7 @@ export class MayorMenorComponent implements OnInit{
       this.valorDeCartas.push(carta.value);
     });
 
-    if ((this.valorDeCartas[1] >= this.valorDeCartas[0])) {
+    if (this.convertirValorCarta(this.valorDeCartas[1]) >= this.convertirValorCarta(this.valorDeCartas[0])) {
       this.puntos++;
       this.intentos--;
       this.mostrarSegundaCarta = true;
@@ -63,14 +63,15 @@ export class MayorMenorComponent implements OnInit{
     this.cartas[1] = temporal
     
     this.EstadoDelJuego();
-      setTimeout(() => {
+    setTimeout(() => {
+      if (this.intentos > 0) {  // Solo permitimos sacar carta si hay intentos restantes
         this.mostrarSegundaCarta = false;
         this.SacarNuevaCarta();
         this.desabilitarBotones = false;
-        if(this.intentos == 0){
-          this.desabilitarBotones = true;
-        }
-      }, 2000)
+      } else {
+        this.desabilitarBotones = true;
+      }
+    }, 2000);
   }
 
   EsMenor(){
@@ -80,7 +81,7 @@ export class MayorMenorComponent implements OnInit{
       this.valorDeCartas.push(carta.value);
     });
 
-    if ((this.valorDeCartas[1] <= this.valorDeCartas[0])) {
+    if (this.convertirValorCarta(this.valorDeCartas[1]) <= this.convertirValorCarta(this.valorDeCartas[0])) {
       this.puntos++;
       this.intentos--;
       this.mostrarSegundaCarta = true;
@@ -94,14 +95,23 @@ export class MayorMenorComponent implements OnInit{
     this.cartas[1] = temporal
     
     this.EstadoDelJuego();
-      setTimeout(() => {
+    setTimeout(() => {
+      if (this.intentos >= 0) {
         this.mostrarSegundaCarta = false;
         this.SacarNuevaCarta();
         this.desabilitarBotones = false;
-        if(this.intentos == 0){
-          this.desabilitarBotones = true;
-        }
-      }, 2000)
+      } else {
+        this.desabilitarBotones = true;
+      }
+    }, 2000);
+  }
+
+  convertirValorCarta(valor: string): number {
+    if (valor === "ACE") return 14;
+    if (valor === "KING") return 13;
+    if (valor === "QUEEN") return 12;
+    if (valor === "JACK") return 11;
+    return parseInt(valor);  
   }
 
   SacarNuevaCarta() {

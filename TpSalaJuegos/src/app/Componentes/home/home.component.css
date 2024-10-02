@@ -41,3 +41,31 @@
     margin-top: 60px;
     font-size: 20px;
   }
+
+  @media (max-width: 1366px) {
+    .button-grid button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .material-icons {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .button-grid button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .material-icons {
+        font-size: 35px;
+    }
+
+    .tooltip {
+        font-size: 14px;
+    }
+}
+
+  

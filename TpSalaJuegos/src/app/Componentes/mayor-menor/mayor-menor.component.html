@@ -7,7 +7,7 @@
     <div *ngIf="mostrarTooltip" class="tooltip">{{usuarioLogeado}}</div>
 </div>
 <div class="container">
-    <h1>La Siguiente Carta es Mayor o Menor?</h1>
+    <h1 class="titulo">La Siguiente Carta es Mayor o Menor?</h1>
     <div class="cards">
         <div *ngFor="let card of cartas; let i=index">
             <ng-container *ngIf="i === 0 || (i === 1 && mostrarSegundaCarta)">

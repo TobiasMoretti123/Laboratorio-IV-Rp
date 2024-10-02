@@ -56,3 +56,45 @@
   padding: 20px 30px;
   font-size: 20px;
 }
+
+@media (max-width: 1366px) {
+    .contenedor {
+        width: 80%; /* Ajuste de ancho en notebooks */
+        padding: 3vw; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ajuste del tamaño del título */
+    }
+
+    .input{
+        margin-left: 160px;
+        width: 100%;
+    }
+
+    .boton{
+        width: 50%;
+        margin-left: 270px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contenedor {
+        width: 80%; /* Aumenta el ancho del contenedor en pantallas más pequeñas */
+        padding: 2.5vw;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .input{
+        margin-left: 160px;
+        width: 100%;
+    }
+
+    .boton{
+        width: 40%;
+        margin-left: 260px;
+    }
+}
