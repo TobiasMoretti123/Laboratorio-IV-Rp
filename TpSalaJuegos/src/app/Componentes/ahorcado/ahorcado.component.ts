@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
 import { FireStorageService } from '../../Servicios/fire-storage.service';
+import { FireDatabaseService } from '../../Servicios/fire-database.service';
 
 @Component({
   selector: 'app-ahorcado',
@@ -42,7 +43,13 @@ export class AhorcadoComponent  implements OnInit{
   imagenTorzo:string ="";
   puntos:number = 0;
 
-  constructor(public snackBar:MatSnackBar,public router:Router,public auth:FireAuthService,public storageService:FireStorageService){}
+  constructor(
+     public snackBar:MatSnackBar
+    ,public router:Router
+    ,public auth:FireAuthService
+    ,public storageService:FireStorageService
+    ,public fireDataBase:FireDatabaseService
+  ){}
 
   CerrarSession(){
     this.auth.logout()
@@ -95,11 +102,13 @@ export class AhorcadoComponent  implements OnInit{
       this.esVictoria = true;
       this.blockearJugarDeNuevo = false;
       this.AbrirSnackBar('Felicitaciones Ganaste '+ this.puntos +" Puntos");
+      this.fireDataBase.CargarPosicion(this.usuarioLogeado,'ahorcado',this.puntos);
     }
     else if (this.errores >= this.limiteDeErrores){
       this.esVictoria = false;
       this.blockearJugarDeNuevo = false;
       this.AbrirSnackBar('Perdiste, la palabra era: '+ this.palabraSeleccionada);
+      this.fireDataBase.CargarPosicion(this.usuarioLogeado,'ahorcado',this.puntos);
     }
   }
 

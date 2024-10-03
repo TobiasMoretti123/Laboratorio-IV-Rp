@@ -1,0 +1,34 @@
+<div class="button-grid">
+    <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button (click)="SobreMi()">Sobre Mí</button>
+    <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
+    <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
+    <div *ngIf="mostrarUsuario" class="tooltip">{{usuarioLogeado}}</div>
+</div>
+<div class="container">
+  <div *ngIf="posiciones.length > 0; else noPosiciones">
+    <h1 class="titulo">Tabla de Posiciones Mayor Menor</h1>
+    <div class="caja">
+      <table>
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Puntos</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let posicion of posiciones">
+            <td>{{ posicion.usuario }}</td>
+            <td>{{ posicion.puntos }}</td>
+            <td>{{ ConvertirFecha(posicion.fecha) | date:'d/MM/YYYY' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <ng-template #noPosiciones>
+    <p>No hay posiciones disponibles.</p>
+  </ng-template>
+</div>
+

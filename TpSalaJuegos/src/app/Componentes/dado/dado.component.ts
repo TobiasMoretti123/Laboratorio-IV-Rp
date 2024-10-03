@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FireStorageService } from '../../Servicios/fire-storage.service';
+import { FireDatabaseService } from '../../Servicios/fire-database.service';
 
 @Component({
   selector: 'app-dado',
@@ -31,7 +32,13 @@ export class DadoComponent {
   imagen5: string | null = null;
   imagen6: string | null = null;
 
-  constructor(private storageService:FireStorageService, private servicio: DadosService, private router:Router, public auth: FireAuthService, public snackBar: MatSnackBar){}
+  constructor(
+    private storageService:FireStorageService, 
+    private servicio: DadosService, 
+    private router:Router, 
+    public auth: FireAuthService, 
+    public snackBar: MatSnackBar,
+    public fireDatabaseService:FireDatabaseService){}
 
 
   async ngOnInit(): Promise<void> {
@@ -101,6 +108,7 @@ export class DadoComponent {
     if(this.intentos == 0){
       setTimeout(() => {
         this.AbrirSnackBar(`Obtuviste ${this.puntos} Puntos`);
+        this.fireDatabaseService.CargarPosicion(this.usuario,'dado',this.puntos);
         this.blockearJugarDeNuevo = false;
         this.mostrarDado  = false;
         this.blockearBotones = true;

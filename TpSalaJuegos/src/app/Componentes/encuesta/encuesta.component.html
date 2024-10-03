@@ -1,0 +1,86 @@
+<div class="button-grid">
+    <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button routerLink="/Chat">Chat</button>
+    <button mat-raised-button (click)="SobreMi()">Sobre Mí</button>
+    <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
+    <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
+    <div *ngIf="mostrarUsuario" class="tooltip">{{usuarioLogeado.mail}}</div>
+</div>
+<form class="form-container" [formGroup]="encuestaForm" (ngSubmit)="CargarEncuentas()">
+  <h3 class="titulo">Encuesta</h3>
+  <div class="dato">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+      <mat-error *ngIf="nombre?.invalid && (nombre?.touched || nombre?.dirty)">
+        Nombre es requerido y debe contener solo letras.
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido" />
+      <mat-error *ngIf="apellido?.invalid && (apellido?.touched || apellido?.dirty)">
+        Apellido es requerido y debe contener solo letras.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  
+
+  <div class="dato">
+    <mat-form-field>
+      <mat-label>Edad</mat-label>
+      <input matInput type="number" formControlName="edad" />
+      <mat-error *ngIf="edad?.invalid && (edad?.touched || edad?.dirty)">
+        Edad es requerida y debe ser entre 18 y 99 años.
+      </mat-error>
+    </mat-form-field>
+ 
+    <mat-form-field>
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono" />
+      <mat-error *ngIf="telefono?.invalid && (telefono?.touched || telefono?.dirty)">
+        Teléfono es requerido y debe tener 10 dígitos.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dato">
+    <h3 class="titulo">¿Cuál fue tu Juego Favorito?</h3>
+        <div class="radio-button-container">
+            <mat-radio-button value="ahorcado">Ahorcado</mat-radio-button>
+            <mat-radio-button value="mayorMenor">Mayor Menor</mat-radio-button>
+            <mat-radio-button value="dado">Adivina el Dado</mat-radio-button>
+            <mat-radio-button value="preguntados">Preguntados</mat-radio-button>
+        </div>
+    <mat-error *ngIf="juegoFavorito?.invalid && (juegoFavorito?.touched || juegoFavorito?.dirty)">
+        Seleccione un juego favorito.
+    </mat-error>
+  </div>
+
+  <div class="dato">
+    <div formGroupName="juegosJugados">
+      <h3 class="titulo">Que Juegos Jugaste?:</h3>
+      <mat-checkbox formControlName="ahorcado" class="checkbox-item">Ahorcado</mat-checkbox>
+      <mat-checkbox formControlName="mayorMenor" class="checkbox-item">Mayor Menor</mat-checkbox>
+      <mat-checkbox formControlName="preguntados" class="checkbox-item">Preguntados</mat-checkbox>
+      <mat-checkbox formControlName="dado" class="checkbox-item">Dado</mat-checkbox>
+    </div>
+  </div>
+
+  <div class="datoComentario">
+    <h3 class="titulo">Algun Comentario Sobre Nuestra App?</h3><br>
+    <mat-form-field>
+      <mat-label>Comentario</mat-label>
+      <input matInput formControlName="comentarios" />
+      <mat-error *ngIf="comentarios?.invalid && (comentarios?.touched || comentarios?.dirty)">
+        Comentario es requerido y debe contener solo letras.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  
+  <div class="dato">
+    <button mat-raised-button type="submit" class="form-button" [disabled]="!encuestaForm.valid">Enviar</button>
+  </div>
+</form>
+  

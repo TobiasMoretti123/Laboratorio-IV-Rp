@@ -12,14 +12,14 @@ import { Usuario } from '../../Clases/usuario';
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  usuarioLogeado: Usuario = new Usuario (this.email,this.password);
+  usuarioLogeado: Usuario = new Usuario (this.email,this.password,'','',0,0);
 
   constructor(private authService: FireAuthService, private router: Router, public snackBar: MatSnackBar) {}
 
   Login() {
     this.authService.login(this.email, this.password).subscribe(result => {
       if (result.success) {
-        this.usuarioLogeado = new Usuario(this.email,this.password);
+        this.usuarioLogeado = new Usuario(this.email,this.password,'','',0,0);
         this.AbrirSnackBar('Usuario logueado: ' + this.email);
         this.router.navigate(['/Home']);
       } else {

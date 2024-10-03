@@ -1,5 +1,7 @@
 <div class="button-grid">
     <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button routerLink="/Encuesta">Encuesta</button>
+    <button mat-raised-button routerLink="/Chat">Chat</button>
     <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
     <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
     <div *ngIf="mostrarUsuario" class="tooltip">{{usuario.mail}}</div>

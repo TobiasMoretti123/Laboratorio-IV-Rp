@@ -3,6 +3,7 @@ import { PaisesService } from '../../Servicios/paises.service';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FireDatabaseService } from '../../Servicios/fire-database.service';
 
 @Component({
   selector: 'app-preguntados',
@@ -21,7 +22,12 @@ export class PreguntadosComponent {
   desabilitarBotones:boolean = false;
   mostrarBandera: boolean = true;
   
-  constructor(private paisesService: PaisesService, public fireAuthService: FireAuthService, public snackBar: MatSnackBar, public router: Router) {}
+  constructor(
+    private paisesService: PaisesService, 
+    public fireAuthService: FireAuthService, 
+    public snackBar: MatSnackBar, 
+    public router: Router,
+    public fireDatabase:FireDatabaseService) {}
   
   ngOnInit(): void {
     this.obtenerPaises();
@@ -108,6 +114,7 @@ export class PreguntadosComponent {
       this.blockearRejugar = false;
       this.desabilitarBotones = true;
       this.AbrirSnackBar(`Obtuviste ${this.puntos} puntos`);
+      this.fireDatabase.CargarPosicion(this.usuarioLogeado,'preguntados',this.puntos);
     }
   }
   

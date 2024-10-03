@@ -1,5 +1,6 @@
 <div class="button-grid">
     <button mat-raised-button (click)="Volver()">Volver</button>
+    <button mat-raised-button routerLink="/Encuesta">Encuesta</button>
     <button mat-raised-button (click)="SobreMi()">Sobre Mí</button>
     <button mat-raised-button color="warn" (click)="CerrarSession()">Cerrar Sesión</button>
     <i class="material-icons" (mouseover)="MostrarUsuario()" (mouseleave)="OcultarUsuario()">account_circle</i>
@@ -8,7 +9,7 @@
   <div class="contenedor">
         <div class="chat-box">
           <div class="messages">
-            <div *ngFor="let mensaje of (fireDataBaseService.mensajes | async)">
+            <div *ngFor="let mensaje of (fireDataBaseService.objetos | async)">
               <ng-container *ngIf="mensaje.usuario === usuarioLogeado; else otherUser">
                 <div class="sent-message">
                   <div class="metadata">Tu {{ ConvertirFecha(mensaje.fecha) | date: 'short' }}</div>

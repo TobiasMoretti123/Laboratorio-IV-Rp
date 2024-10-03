@@ -1,37 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Timestamp } from '@angular/fire/firestore';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FireDatabaseService } from '../../Servicios/fire-database.service';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrl: './chat.component.css'
+  selector: 'app-resultados-dado',
+  templateUrl: './resultados-dado.component.html',
+  styleUrl: './resultados-dado.component.css'
 })
-export class ChatComponent implements OnInit{
+export class ResultadosDadoComponent implements OnInit{
   mostrarUsuario:boolean = false;
-  mensajes: { usuario: string, mensaje: string, fecha: Timestamp }[] = [];
-  nuevoMensaje: string = '';
+  posiciones: { juego:string,usuario: string, puntos: number, fecha: Timestamp }[] = [];
   usuarioLogeado: string | null ='';
 
-  constructor(public fireDataBaseService:FireDatabaseService,public fireAuthService:FireAuthService,public router:Router, public snackBar: MatSnackBar) {}
+  constructor(public fireDataBaseService:FireDatabaseService,
+    public fireAuthService:FireAuthService,
+    public router:Router, 
+    public snackBar: MatSnackBar){}
 
   ngOnInit(): void {
-    this.fireDataBaseService.IniciarChat();
-    this.fireDataBaseService.objetos?.subscribe(mensajes => {
-      this.mensajes = mensajes;
+    this.fireDataBaseService.LeerPosiciones('dado');
+    this.fireDataBaseService.objetos?.subscribe(posiciones => {
+      this.posiciones = posiciones;
     });
     this.fireAuthService.getUserEmail().subscribe(email => {
       this.usuarioLogeado = email;
     });
-  }
-
-  CerrarSession(){
-    this.fireAuthService.logout();
-    this.AbrirSnackBar('Se a cerrado la sesion');
-    this.RuteoHome();
   }
 
   AbrirSnackBar(mensaje:any){
@@ -40,11 +36,10 @@ export class ChatComponent implements OnInit{
     });
   }
 
-  EnviarMensaje() {
-    if (this.nuevoMensaje.trim() !== '') {
-      this.fireDataBaseService.EnviarMensaje(this.usuarioLogeado,this.nuevoMensaje);
-      this.nuevoMensaje = ''; 
-    }
+  CerrarSession(){
+    this.fireAuthService.logout();
+    this.AbrirSnackBar('Se a cerrado la sesion');
+    this.RuteoHome();
   }
 
   Volver(){

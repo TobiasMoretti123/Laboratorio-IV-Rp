@@ -1,0 +1,78 @@
+.button-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.1vw;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .button-grid button {
+    margin-left: 0.5vw;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+  }
+  
+  .content {
+  padding-top: 50px; 
+  }
+  
+  .material-icons{
+  margin-left: 1vw;
+  margin-top: 0.4vw;
+  font-size: 2.5vw; 
+  }
+  
+  .tooltip {
+  position: absolute;
+  background-color: rgb(255, 255, 255);;
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  border-radius: 3px;
+  z-index: 9999; 
+  margin-top: 3vw;
+  font-size: 1vw;
+  }
+
+  .form-container{
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.5); 
+      border-radius: 1vw;
+      text-align: center;
+      margin-top: 2vw;
+  }
+  
+  mat-error{
+    font-size: 0.7vw;
+    background-color: white;
+    color: black;
+  }
+
+  .dato{
+    margin-bottom: 1vw;
+  }
+
+  .form-button {
+    display: block;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    border: none;
+    border-radius: 5vw;
+    margin-bottom: 1vw;
+    cursor: pointer;
+    text-align: center;
+    line-height: 0;
+    width: 95%;
+    margin-left: 0.5vw;
+  }
+
+  .titulo{
+    font-size: 1.5vw;
+  }

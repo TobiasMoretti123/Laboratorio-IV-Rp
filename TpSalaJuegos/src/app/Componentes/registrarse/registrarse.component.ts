@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Usuario } from '../../Clases/usuario';
 
 @Component({
   selector: 'app-registrarse',
@@ -11,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RegistrarseComponent {
   email: string = '';
   password: string = '';
+  usuarioLogeado: Usuario = new Usuario (this.email,this.password,'','',0,0);
   mostrarTooltip: boolean = false;
 
   constructor(private authService: FireAuthService, private router: Router, public snackBar: MatSnackBar) {}
@@ -18,6 +20,7 @@ export class RegistrarseComponent {
   Registrarse() {
     this.authService.register(this.email, this.password).subscribe(result => {
       if (result.success) {
+        this.usuarioLogeado = new Usuario(this.email,this.password,'','',0,0);
         this.AbrirSnackBar('Usuario registrado: ' + this.email)
         this.router.navigate(['/Home']);
       } else {

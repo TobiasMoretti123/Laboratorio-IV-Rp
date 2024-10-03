@@ -14,22 +14,22 @@ const routes: Routes = [
   },
   {
     path: 'ahorcado',
-    loadChildren: () => import('./../ahorcado/ahorcado.module').then(m => m.AhorcadoModule)
+    loadChildren: () => import('./../resultados-ahorcado/resultados-ahorcado.module').then(m => m.ResultadosAhorcadoModule)
     , canActivate: [AuthGuard]
   },
   {
     path: 'preguntados',
-    loadChildren: () => import('./../preguntados/preguntados.module').then(m => m.PreguntadosModule)
+    loadChildren: () => import('./../resultados-preguntados/resultados-preguntados.module').then(m => m.ResultadosPreguntadosModule)
     , canActivate: [AuthGuard]
   },
   {
     path: 'mayor-menor',
-    loadChildren: () => import('./../mayor-menor/mayor-menor.module').then(m => m.MayorMenorModule)
+    loadChildren: () => import('./../resultados-mayor-menor/resultados-mayor-menor.module').then(m => m.ResultadosMayorMenorModule)
     , canActivate: [AuthGuard]
   },
   {
     path: 'dado',
-    loadChildren: () => import('./../dado/dado.module').then(m => m.DadoModule)
+    loadChildren: () => import('./../resultados-dado/resultados-dado.module').then(m => m.ResultadosDadoModule)
     , canActivate: [AuthGuard]
   }
 ];
@@ -38,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class JuegosRoutingModule { }
+export class ResultadosRoutingModule { }

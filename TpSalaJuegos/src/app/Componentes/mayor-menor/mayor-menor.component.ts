@@ -3,6 +3,7 @@ import { MayorMenorAPIService } from '../../Servicios/mayor-menor-api.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FireAuthService } from '../../Servicios/fire-auth.service';
+import { FireDatabaseService } from '../../Servicios/fire-database.service';
 
 @Component({
   selector: 'app-mayor-menor',
@@ -24,7 +25,8 @@ export class MayorMenorComponent implements OnInit{
   constructor(private servicio: MayorMenorAPIService, 
     private router: Router, 
     private snackBar: MatSnackBar,
-    public fireAuthService:FireAuthService) { }
+    public fireAuthService:FireAuthService,
+    public fireDatabaseService:FireDatabaseService) { }
 
   ngOnInit(): void {
     this.servicio.ObtenerUnNuevoMazo().subscribe((r:any) =>{
@@ -124,6 +126,7 @@ export class MayorMenorComponent implements OnInit{
     if(this.intentos == 0){
       this.blockearRejugar = false;
       this.AbrirSnackBar(`Obtuviste ${this.puntos} Puntos`);
+      this.fireDatabaseService.CargarPosicion(this.usuarioLogeado,'mayor-menor',this.puntos)
     }
   }
 

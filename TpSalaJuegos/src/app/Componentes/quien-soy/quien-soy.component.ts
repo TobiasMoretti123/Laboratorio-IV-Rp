@@ -14,7 +14,7 @@ export class QuienSoyComponent implements OnInit {
   mostrarSpinner:boolean = false;
   mostrarUsuario:boolean = false;
   imagenAlumno: string = "";
-  usuario:Usuario = new Usuario("","")
+  usuario:Usuario = new Usuario("","",'','',0,0)
 
   constructor(public router: Router, public authService: FireAuthService,public storageService:FireStorageService, public snackBar: MatSnackBar){}
 
