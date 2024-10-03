@@ -45,18 +45,18 @@
     </mat-form-field>
   </div>
 
-  <div class="dato">
+  <div class="dato" [formGroup]="encuestaForm">
     <h3 class="titulo">¿Cuál fue tu Juego Favorito?</h3>
-        <div class="radio-button-container">
-            <mat-radio-button value="ahorcado">Ahorcado</mat-radio-button>
-            <mat-radio-button value="mayorMenor">Mayor Menor</mat-radio-button>
-            <mat-radio-button value="dado">Adivina el Dado</mat-radio-button>
-            <mat-radio-button value="preguntados">Preguntados</mat-radio-button>
-        </div>
-    <mat-error *ngIf="juegoFavorito?.invalid && (juegoFavorito?.touched || juegoFavorito?.dirty)">
+    <mat-radio-group formControlName="juegoFavorito">
+        <mat-radio-button value="ahorcado">Ahorcado</mat-radio-button>
+        <mat-radio-button value="mayorMenor">Mayor Menor</mat-radio-button>
+        <mat-radio-button value="dado">Adivina el Dado</mat-radio-button>
+        <mat-radio-button value="preguntados">Preguntados</mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="esInvalido()">
         Seleccione un juego favorito.
     </mat-error>
-  </div>
+</div>
 
   <div class="dato">
     <div formGroupName="juegosJugados">

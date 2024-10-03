@@ -46,7 +46,7 @@ export class EncuestaComponent {
       const apellido = this.encuestaForm.get('apellido')?.value;
       const edad = this.encuestaForm.get('edad')?.value;
       const telefono = this.encuestaForm.get('telefono')?.value;
-      const juegoFavorito: string = this.encuestaForm.get('juegoFavorito')?.value;
+      const juegoFavorito = this.encuestaForm.get('juegoFavorito')?.value;
       const juegosJugados = this.encuestaForm.get('juegosJugados')?.value;
       const comentarios = this.encuestaForm.get('comentarios')?.value;
 
@@ -88,6 +88,10 @@ export class EncuestaComponent {
     this.snackBar.open(mensaje, 'Cerrar',{
       duration: 2000,
     });
+  }
+
+  esInvalido() {
+    return this.encuestaForm.get('juegoFavorito')?.invalid && this.encuestaForm.get('juegoFavorito')?.touched;
   }
 
   Volver(){
