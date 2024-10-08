@@ -4,7 +4,9 @@ import { FireAuthService } from '../../Servicios/fire-auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Usuario } from '../../Clases/usuario';
-import {FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AlMenosUnoValidator } from '../../Validadores/AlMenosUnoValidator.Validator';
+import { RadioSelectedValidator } from '../../Validadores/RadioSelectedValidator.Validator';
 
 @Component({
   selector: 'app-encuesta',
@@ -29,16 +31,15 @@ export class EncuestaComponent {
       edad: new FormControl("",[Validators.required,Validators.min(18),Validators.max(99)]),
       telefono: new FormControl("", [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       comentarios: new FormControl("",[Validators.required,Validators.pattern('^[a-zA-Z\\s]+$')]),
-      juegoFavorito: new FormControl(["", Validators.required]),
+      juegoFavorito: new FormControl("", RadioSelectedValidator()),
       juegosJugados:  new FormGroup({
         ahorcado: new FormControl(false), 
         mayorMenor: new FormControl(false),
         preguntados: new FormControl(false),
         dado: new FormControl(false)
-      }),
+      }, { validators: AlMenosUnoValidator() }),
     });
   }
-
   
   CargarEncuentas(){
     if (this.encuestaForm.valid) {

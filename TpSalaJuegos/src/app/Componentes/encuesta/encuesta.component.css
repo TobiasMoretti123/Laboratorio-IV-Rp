@@ -43,7 +43,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.5); 
+      background-color: chocolate;
       border-radius: 1vw;
       text-align: center;
       margin-top: 2vw;
@@ -54,6 +54,12 @@
     background-color: white;
     color: black;
   }
+
+  mat-radio-group {
+    display: flex;
+    margin-left: 3.5vw;
+}
+
 
   .dato{
     margin-bottom: 1vw;
@@ -74,5 +80,5 @@
   }
 
   .titulo{
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
